@@ -19,7 +19,7 @@ The application stores only public verification keys, descriptions and lengths. 
 [![GitHub release](https://img.shields.io/github/v/release/smartlegionlab/smart-password-manager-gui-rs)](https://github.com/smartlegionlab/smart-password-manager-gui-rs/)
 [![GitHub stars](https://img.shields.io/github/stars/smartlegionlab/smart-password-manager-gui-rs?style=social)](https://github.com/smartlegionlab/smart-password-manager-gui-rs/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/smartlegionlab/smart-password-manager-gui-rs?style=social)](https://github.com/smartlegionlab/smart-password-manager-gui-rs/network/members)
-![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey)
+![Platform](https://img.shields.io/badge/platform-linux%20%7C%20windows-lightgrey)
 [![Crates.io Downloads](https://img.shields.io/crates/d/smart-password-manager)](https://crates.io/crates/smart-password-manager)
 
 ---
@@ -54,7 +54,7 @@ The application stores only public verification keys, descriptions and lengths. 
 - **Live Search**: Filter entries by description or public key in real time
 - **Secure Input**: Secret phrase hidden by default with Show / Hide toggle
 - **Live Validation**: Buttons enable only when the form is valid; counters for description and secret length
-- **Copy to Clipboard**: System clipboard on X11, Wayland, macOS and Windows; OSC 52 fallback for compatible terminals
+- **Copy to Clipboard**: System clipboard on X11, Wayland and Windows; OSC 52 fallback for compatible terminals
 - **Keyboard Shortcuts**: Full keyboard navigation and hotkeys
 - **About / Help / Shortcuts Dialogs**: Built-in documentation and reference
 - **Cross-Platform Data**: Same `passwords.json` format as the Python, JavaScript, Kotlin, Go and C# implementations
@@ -94,7 +94,7 @@ Note: shortcuts are ignored while a text input has focus, so typing in the searc
 
 When you click **Copy to clipboard** in the password dialog, or press **Ctrl+C** while the password is shown, the application tries two methods in order:
 
-1. **System clipboard** via the `arboard` crate. Works on X11, Wayland, macOS and Windows sessions.
+1. **System clipboard** via the `arboard` crate. Works on X11, Wayland and Windows sessions.
 2. **OSC 52** escape sequence written to stdout. Works in most modern terminals (`kitty`, `alacritty`, `wezterm`, `iTerm2`, `Windows Terminal`, `GNOME Terminal`, `Konsole`, `tmux` with `set-clipboard on`) and also over SSH.
 
 If neither method is available, the status bar reports `No clipboard available`, and the password can be selected manually from the password field.
@@ -161,7 +161,6 @@ The file location is determined by `smartpasslib::SmartPasswordManager`, the sam
 | Platform | Path                                                          |
 |----------|---------------------------------------------------------------|
 | Linux    | `~/.config/smart_password_manager/passwords.json`             |
-| macOS    | `~/.config/smart_password_manager/passwords.json`             |
 | Windows  | `%USERPROFILE%\.config\smart_password_manager\passwords.json` |
 
 Format:
@@ -349,14 +348,6 @@ sudo apt-get install -y \
 sudo pacman -S base-devel libx11 libxcursor libxrandr libxi mesa wayland libxkbcommon
 ```
 
-### macOS
-
-Install Xcode Command Line Tools:
-
-```bash
-xcode-select --install
-```
-
 ### Windows
 
 No additional packages needed.
@@ -407,10 +398,9 @@ https://github.com/smartlegionlab/smart-password-manager-gui-rs/releases
 | Platform       | Filename                                              |
 |----------------|-------------------------------------------------------|
 | Linux x86_64   | `smart-password-manager-linux-x86_64-<version>`       |
-| macOS x86_64   | `smart-password-manager-macos-x86_64-<version>`       |
 | Windows x86_64 | `smart-password-manager-windows-x86_64-<version>.exe` |
 
-**Linux / macOS:**
+**Linux:**
 
 ```bash
 chmod +x smart-password-manager-linux-x86_64-<version>

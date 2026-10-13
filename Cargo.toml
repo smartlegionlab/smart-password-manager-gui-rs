@@ -1,0 +1,28 @@
+[package]
+name = "smart-password-manager"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "BSD-3-Clause"
+authors = ["Alexander Suvorov <smartlegionlab@gmail.com>"]
+repository = "https://github.com/smartlegionlab/smart-password-manager-gui-rs"
+homepage = "https://smartlegionlab.github.io"
+description = "A cross-platform GUI for smart password management built on smartpasslib. Generate deterministic passwords from secret phrases without storing them."
+readme = "README.md"
+keywords = ["password", "gui", "security", "cryptography", "smartpasslib"]
+categories = ["gui", "cryptography"]
+
+[dependencies]
+smartpasslib = "4.0"
+eframe = { version = "0.29", default-features = false, features = ["glow", "default_fonts", "wayland", "x11"] }
+egui = "0.29"
+egui_extras = { version = "0.29", features = ["syntect"] }
+arboard = "3"
+base64 = "0.22"
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

@@ -71,7 +71,7 @@ The application stores only public verification keys, descriptions and lengths. 
 
 ## Screenshots
 
-![Main view](https://raw.githubusercontent.com/smartlegionlab/smart-password-manager-gui-rs/master/data/images/screenshot-main.png)
+![Main view](https://raw.githubusercontent.com/smartlegionlab/smart-password-manager-gui-rs/master/data/images/smart-password-manager-gui-rs.png)
 
 ---
 

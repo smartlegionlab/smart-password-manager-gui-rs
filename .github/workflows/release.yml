@@ -22,15 +22,19 @@ jobs:
             target: x86_64-pc-windows-msvc
             artifact: smart-password-manager-windows-x86_64
 
+    env:
+      RUSTUP_TOOLCHAIN: "1.95"
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@master
-        with:
-          toolchain: 1.95
-          targets: ${{ matrix.target }}
+      - name: Install Rust 1.95
+        shell: bash
+        run: |
+          rustup install 1.95
+          rustup default 1.95
+          rustc --version
 
       - name: Install Linux dependencies
         if: matrix.os == 'ubuntu-latest'
@@ -46,8 +50,6 @@ jobs:
             libxkbcommon-dev
 
       - name: Build release
-        env:
-          RUSTUP_TOOLCHAIN: "1.95"
         run: cargo build --release --target ${{ matrix.target }}
 
       - name: Rename binary (Unix)

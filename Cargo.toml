@@ -2,7 +2,7 @@
 name = "smart-password-manager"
 version = "0.1.3"
 edition = "2024"
-rust-version = "1.88"
+rust-version = "1.95"
 license = "BSD-3-Clause"
 authors = ["Alexander Suvorov <smartlegionlab@gmail.com>"]
 repository = "https://github.com/smartlegionlab/smart-password-manager-gui-rs"

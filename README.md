@@ -1,5 +1,12 @@
 # Smart Password Manager (Rust, GUI)
 
+> **⚠️ Experimental implementation.** This is an experimental Rust GUI built on `egui`. It is functional, but the interface and behaviour may change. For production use on Windows or Linux desktop, please prefer the mature versions from the Smart Password ecosystem:
+>
+> - **[Desktop Smart Password Manager (Python)](https://github.com/smartlegionlab/smart-password-manager-desktop)** — full-featured desktop GUI, stable
+> - **[Desktop Smart Password Manager (C#)](https://github.com/smartlegionlab/SmartPasswordManagerCsharpDesktop)** — Windows-native desktop GUI, stable
+>
+> This GUI is primarily a demonstration that the `smartpasslib` algorithm works consistently across all interfaces, including a Rust desktop window. Use it if you want to experiment, not as your daily driver.
+
 **A cross-platform desktop GUI for smart password management built on [smartpasslib](https://github.com/smartlegionlab/smartpasslib-rs). Generate deterministic passwords from secret phrases without storing them. No cloud, no database, no trust required.**
 
 ## Overview

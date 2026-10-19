@@ -1,4 +1,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+
 mod app;
 mod clipboard;
 mod style;
@@ -8,6 +9,7 @@ mod ui;
 use anyhow::Result;
 use clap::Parser;
 use eframe::egui;
+use egui_native_look as look;
 
 use app::{APP_NAME, APP_VERSION, App};
 
@@ -43,6 +45,11 @@ fn main() -> Result<()> {
         "Smart Password Manager",
         options,
         Box::new(|cc| {
+            let mut fonts = egui::FontDefinitions::default();
+            look::install_fonts(&mut fonts, look::Look::system());
+            cc.egui_ctx.set_fonts(fonts);
+            look::install(&cc.egui_ctx, look::Theme::system());
+
             style::apply_theme(&cc.egui_ctx);
             Ok(Box::new(App::new(cc)))
         }),

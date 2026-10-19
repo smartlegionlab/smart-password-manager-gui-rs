@@ -564,8 +564,8 @@ impl App {
 }
 
 impl eframe::App for App {
-    fn update(&mut self, ctx: &eframe::egui::Context, _frame: &mut eframe::Frame) {
-        self.handle_shortcuts(ctx);
-        crate::ui::render(ctx, self);
+    fn ui(&mut self, ui: &mut eframe::egui::Ui, _frame: &mut eframe::Frame) {
+        self.handle_shortcuts(ui.ctx());
+        crate::ui::render(ui, self);
     }
 }

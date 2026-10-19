@@ -1,7 +1,7 @@
 use eframe::egui;
+use egui_native_look as look;
 
 use crate::app::App;
-use crate::style;
 use crate::theme;
 
 pub fn render(ctx: &egui::Context, app: &mut App) {
@@ -30,7 +30,7 @@ pub fn render(ctx: &egui::Context, app: &mut App) {
         }
         ui.add_space(10.0);
         ui.vertical_centered(|ui| {
-            if ui.add(style::primary_button("OK")).clicked() {
+            if ui.add(look::Button::new("OK").accent()).clicked() {
                 app.message = None;
             }
         });
